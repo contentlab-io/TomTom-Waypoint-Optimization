@@ -120,10 +120,9 @@ export default {
             }),
 
             options: {
-                travelMode: "car",
+                travelMode: "truck",
                 vehicleMaxSpeed: 0,
                 vehicleCommercial: true,
-                vehicleLoadType: ["otherHazmatGeneral"],
                 traffic: "live",
                 departAt: "now",
                 outputExtensions: ["travelTimes", "routeLengths"],
@@ -140,7 +139,7 @@ export default {
             body: JSON.stringify(data),
         };
 
-        fetch(`https://api.tomtom.com/routing/waypointoptimization/1/best?key=${import.meta.env.VITE_APP_API_KEY}`, requestOptions)
+        fetch(`https://api.tomtom.com/routing/waypointoptimization/1?key=${import.meta.env.VITE_APP_API_KEY}`, requestOptions)
             .then(response => response.json())
             .then((data) => {
                 // For the markers
